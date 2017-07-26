@@ -1,0 +1,18 @@
+{{!-- <h3>Location<a href="#" class="share-twitter"><img src="/images/twitter_icon.png" /></a></h3> --}}
+<h4>{{location.title}} {{#if isMe}} <a href="#" class="glyphicon glyphicon-remove delete-pin"></a> {{/if}}</h4>
+<p>{{location.nDate}}</p>
+<p>
+	{{#each location.hash}}
+		<a href="/?hash={{this}}">#{{this}}</a>, 
+	{{/each}}
+</p>
+<hr/>
+<h4><img src="{{location.imageURL}}" /><a href="/?uid={{location.user_id}}">{{location.username}}</a>{{#if isAuth}}<a href="#" class="glyphicon glyphicon-plus add-follow"></a>{{/if}}<a href="#" class="share-twitter"><img src="/images/twitter_icon_inv.png" /></a><a href="#" class="share-facebook"><img src="/images/fb_icon_inv.png" /></a></p></h4>
+
+<hr/>
+<div class="com-wrap">
+	<h4>Comments{{#if isAuth}}<a href="#" class="glyphicon glyphicon-plus comment" data-pid="{{location._id}}"></a>{{/if}}</h4>
+</div>
+<div class="location-comments">
+
+</div>

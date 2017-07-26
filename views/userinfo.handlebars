@@ -1,0 +1,23 @@
+
+<div class="row">
+	<div class="col-md-6 col-sm-6">
+		<div class="map">
+
+			<div id="map-canvas"></div>
+		</div>
+	</div>
+	<div class="col-md-6 col-sm-6 locations">
+		<h4><img src="{{user.twitter.imageURL}}"/> {{user.twitter.displayName}}</h4>
+		{{#each pins}}
+			<p><strong>posted on:</strong> {{nDate}}</p>
+			<h5><strong>TITLE:</strong> <a href="/location/{{_id}}">{{title}}</a></h5>
+			<h5><strong>TAGS:</strong>
+	            {{#each hash}}
+	                <a href="/search/{{this}}">#{{this}}</a>, 
+	            {{/each}}
+	        </h5>
+
+			<hr/>
+		{{/each}}
+	</div>
+</div>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="description" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--<meta content="index,follow" name="Robots">-->
+    <title>{{ title }}</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <link rel="shortcut icon" href="/public/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/public/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/public/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/public/images/apple-touch-icon-114x114.png">
+    <!--
+    <meta property="og:title" content="Say Hello to Whearbear">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://wherebear.herokuapp.com/">
+    <meta property="og:image" content="http://wherebear.herokuapp.com/public/images/wherebear_og.jpg">
+    <meta property="og:description" content="wherebear is neat">
+    <meta property="og:site_name" content="Wherebear"/>
+    <meta property="fb:app_id" content="419593494896910" />
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@wherebearapp">
+    <meta name="twitter:creator" content="@wherebearapp">
+    <meta name="twitter:url" content="http://wherebear.herokuapp.com/">
+    <meta name="twitter:title" content="Say Hello to Whearbear">
+    <meta name="twitter:description" content="wherebear is neat">
+    <meta name="twitter:image" content=“http://wherebear.herokuapp.com/public/images/wherebear_og.jpg">
+    -->
+    <!-- CSS code from Bootply.com editor -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" href="http://www.website.com/rss.xml" title="">
+    <link href="/dev/css/app.css" rel="stylesheet">
+    <link href="http://wherebear.herokuapp.com/" rel="canonical" />
+</head>
+
+<body class="{{page}}" data-uid="{{uid}}">
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <img src="/images/logo_sm.png" />
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/" class="home"><span><strong>Welcome</strong> {{profile.twitter.username}}</span></a></li>
+                    {{#if isAuth}}
+                    <!--<li><a class="btn btn-default navbar-btn" href="/profile">Profile</a></li>-->
+                    <li><a class="btn btn-default navbar-btn" href="/logout">Logout</a></li>
+                    {{else}}
+                    <li><a href="/auth/twitter" class="btn btn-default navbar-btn">Login Twitter</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
+        <div class="column col-sm-3 col-xs-3" id="sidebar">
+            <div class="buttons">
+                <a href="#" class="glyphicon glyphicon-remove close-btn"></a>
+            </div>
+            <div style="clear:both"></div>
+            <div class="inner">
+            </div>
+        </div>
+        <div class="container-fluid" id="content">
+            {{{body}}}
+        </div>
+        <div class="map">
+            <div class="loader">
+                <div class="loader-inner">
+                    <p></p>
+                    <div class="ball-pulse">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="bck"></div>
+            </div>
+            <div id="map-canvas"></div>
+        </div>
+        <footer>
+        </footer>
+    </div>
+    <!--<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31249247-2', 'auto');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+
+    </script>-->
+    <!--<script src="/dev/js/libs.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+    <script src="/dist/js/app.min.js"></script>-->
+    <script src="//localhost:35729/livereload.js"></script>
+    <script src="/dev/js/libs.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ1zdyQmvBjRvqyATW7QmVnnLFWAT05xo&libraries=places"></script>
+    <script src="/dev/js/templates.js"></script>
+    <script src="/dev/js/utils/api.js"></script>
+    <script src="/dev/js/main.js"></script>
+    <script src="/dev/js/global.js"></script>
+    <script src="/dev/js/utils/utils.js"></script>
+    <script src="/dev/js/utils/mapUtils.js"></script>
+    <script src="/dev/js/profile.js"></script>
+    <script src="/dev/js/map.js"></script>
+    <script src="/dev/js/marker.js"></script>
+    <script src="/dev/js/home.js"></script>
+    <script src="/dev/js/sidebar.js"></script>
+    <script src="/dev/js/comment.js"></script>
+    <script src="/dev/js/social.js"></script>
+</body>
+
+</html>

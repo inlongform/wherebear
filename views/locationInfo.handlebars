@@ -1,0 +1,43 @@
+<div class="row">
+
+</div>
+<div class="row">
+	<div class="col-md-6 col-sm-6">
+		<div class="map" data-lat="{{location.lat}}" data-lng="{{location.lng}}" data-id="{{location._id}}" data-title="{{location.title}}">
+
+			<div id="map-canvas"></div>
+		</div>
+	</div>
+	<div class="col-md-6 col-sm-6 locations">
+
+		<img src="{{postUser.twitter.imageURL}}"/><a href="#" class="share-twitter"><img src="/images/twitter_icon.png" /></a>
+		<p><strong>posted by:</strong> <a href="/user/{{location.user_id}}">{{postUser.twitter.username}}</a></p>
+		<p><strong>posted on:</strong> {{location.nDate}}</p>
+		<h5><strong>TITLE:</strong> {{location.title}}</h5>
+		<h5><strong>TAGS:</strong>
+			{{#each location.hash}}
+				<a href="/search/{{this}}">#{{this}}</a>, 
+			{{/each}}
+		</h5>
+		
+		<br/>
+		<h3>Comments{{#if isAuth}}<a href="#" class="glyphicon glyphicon-plus" data-pid="{{location._id}}"></a>{{/if}}</h3>
+		{{#each comments}}
+			<div class="row">
+
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="col-lg-2 col-md-2 col-sm-2">		
+						<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+						<img src="{{imageURL}}" />
+						
+					</div>
+					<div class="col-lg-10 col-md-10 col-sm-10">	
+						<p><a href="/user/{{user_id}}">{{username}}</a> {{timeSince}}</p>
+						<p>{{comment}}</p>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+
+	</div>
+</div>

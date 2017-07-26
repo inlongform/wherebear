@@ -1,0 +1,31 @@
+{{#if hash}}
+	<h3>#{{hash}}<a href="#" class="share-twitter"><img src="/images/twitter_icon_inv.png" /></a>
+	<a href="#" class="share-facebook"><img src="/images/fb_icon_inv.png" /></a></h3>
+	{{else}}
+
+
+	<h3>Newest Pins	<a href="#" class="share-twitter"><img src="/images/twitter_icon_inv.png" /></a>
+		<a href="#" class="share-facebook"><img src="/images/fb_icon_inv.png" /></a></h3>
+{{/if}}
+<hr/>
+<div class="user-pins new">
+	{{#each locations}}
+		<div class="well well-sm">
+			<!--{{#if isMe}}
+        		<a href="#" class="glyphicon glyphicon-remove remove-comment"></a>
+    		{{/if}}-->
+	        <div class="info">
+	            <span>{{inc @index}}.</span><img src="{{imageURL}}" />
+	        </div>
+	        <div class="desc">
+	            <p><a href="/?pid={{_id}}">{{title}}</a>&nbsp;{{nDate}}</p>
+	            <p><a href="/?uid={{user_id}}">{{username}}</a></p>
+	            <p>
+					{{#each hash}}
+						<a class="hash" href="/?hash={{this}}">#{{this}}</a>
+					{{/each}}
+				</p>
+	        </div>
+	    </div>
+	{{/each}}
+</div>

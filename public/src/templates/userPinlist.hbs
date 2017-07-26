@@ -1,0 +1,32 @@
+<h3>Locations</h3>
+<h4><img src="{{user.imageURL}}" /><a href="/?uid={{user.user_id}}">{{user.username}}</a>
+	{{#if isAuth}}<a href="#" class="glyphicon glyphicon-plus add-follow">{{/if}}</a>
+	<a href="#" class="share-twitter"><img src="/images/twitter_icon_inv.png" /></a>
+	<a href="#" class="share-facebook"><img src="/images/fb_icon_inv.png" /></a>
+</h4>
+
+<hr/>
+<div class="user-pins">
+	{{#each locations}}
+		<div class="well well-sm">
+			
+    		{{#if ../user/isMe}}
+				<a href="#" class="glyphicon glyphicon-remove delete-pin" data-id={{_id}}></a>
+    		{{/if}}
+
+			<span>{{inc @index}}.</span>
+			<div class="holder">
+
+				<a href="/?pid={{_id}}">
+					<p><strong>{{this.title}}</strong></p>
+					<p>{{this.nDate}}</p>
+				</a>
+					<p>
+						{{#each hash}}
+							<a class="hash" href="/?hash={{this}}">#{{this}}</a>
+						{{/each}}
+					</p>
+			</div>
+		</div>
+	{{/each}}
+</div>

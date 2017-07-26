@@ -1,0 +1,15 @@
+
+    <div class="well well-sm">
+        <div class="info">
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            <img src="{{imageURL}}" />
+        </div>
+        <div class="desc">
+            <p><a href="/?uid={{user_id}}">{{username}}</a> {{timeSince}}</p>
+            <p>{{comment}}</p>
+        </div>
+        {{#if isMe}}
+        	<a href="#" class="glyphicon glyphicon-remove remove-comment"></a>
+    	{{/if}}
+    </div>
+

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <h4><img src="{{profile.twitter.imageURL}}"/> you are logged into twitter</h4>
+        <h4>twitter ID: <small>{{profile.twitter.id}}</small></h4>
+        <h4>twitter username: <small>{{profile.twitter.username}}</small></h4>
+        <h4>twitter displayName: <small>{{profile.twitter.displayName}}</small></h4>
+        <h4>twitter location: <small>{{profile.twitter.location}}</small></h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="map">
+            <div id="map-canvas"></div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 locations">
+        {{#each pins}}
+	        <a href="/location/{{_id}}"><strong>{{title}}</strong></a>
+	        <p><strong>posted on:</strong> {{nDate}}</p>
+	        <h5><strong>TITLE:</strong> {{title}}</h5>
+	        <h5><strong>TAGS:</strong>
+	            {{#each hash}}
+	                <a href="/search/{{this}}">#{{this}}</a>, 
+	            {{/each}}
+	        </h5>
+	        <hr/> 
+        {{/each}}
+    </div>
+</div>
